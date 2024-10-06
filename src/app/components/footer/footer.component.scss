@@ -1,0 +1,41 @@
+.footer {
+  background: #3b3b44;
+  min-height: 210px;
+  .description-1 {
+    width: 22%;
+    .title {
+      font-family: Lexend;
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: 1.6px;
+      color: white;
+    }
+    .text {
+      color: rgba(255, 255, 255, 0.7);
+      font-family: Barlow;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      .no_link {
+        color: rgba(255, 255, 255, 0.7);
+      }
+    }
+    .title-custom {
+      color: white;
+      font-family: Barlow;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+    .bottom-decoration {
+        width: 30px;
+        height: 4px;
+        background-color: #F6CE46;
+        margin-bottom: 5px;
+    }
+  }
+}

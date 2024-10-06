@@ -1,0 +1,29 @@
+.container {
+  width: 90%;
+  margin: auto;
+  min-height: 84px;
+  .title {
+    color: white;
+    font-family: Lexend;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1.6px;
+  }
+}
+::ng-deep p-button {
+  .p-button-label {
+    font-family: Lexend;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    color: white;
+  }
+  .selected {
+    .p-button-label {
+      color: #f6ce46;
+    }
+  }
+}
