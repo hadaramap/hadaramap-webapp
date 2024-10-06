@@ -1,9 +1,56 @@
 .container {
-  width: 90%;
+  // width: 90%;
   margin: auto;
   min-height: 84px;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  &.homeMenuStyle {
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    .title {
+      color: white;
+    }
+    .switch-lang {
+      .label {
+        color: white;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        letter-spacing: 1.08px;
+      }
+      ::ng-deep p-button {
+        .p-button-icon {
+          color: white;
+        }
+      }
+    }
+    ::ng-deep p-button {
+      .p-button-label {
+        font-family: Lexend;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        color: white;
+      }
+      &.selected {
+        .p-button-label {
+          color: #f6ce46;
+        }
+      }
+    }
+  }
   .title {
-    color: white;
+    // On click
+    // Navigate to: "HOME";
+    // Animate: Dissolve;
+    animation-timing-function: ease-out;
+    animation-duration: 300ms;
+
+    color: black;
     font-family: Lexend;
     font-size: 32px;
     font-style: normal;
@@ -11,19 +58,34 @@
     line-height: normal;
     letter-spacing: 1.6px;
   }
-}
-::ng-deep p-button {
-  .p-button-label {
-    font-family: Lexend;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    color: white;
-  }
-  .selected {
+  ::ng-deep p-button {
     .p-button-label {
-      color: #f6ce46;
+      font-family: Lexend;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      color: black;
+    }
+    &.selected {
+      .p-button-label {
+        color: green;
+      }
+    }
+  }
+  .switch-lang {
+    .label {
+      color: black;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      letter-spacing: 1.08px;
+    }
+    ::ng-deep p-button {
+      .p-button-icon {
+        color: black;
+      }
     }
   }
 }
