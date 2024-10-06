@@ -1,4 +1,5 @@
-<div class="main h-full hidden md:flex flex-column relative">
+<div class="main h-full hidden md:flex flex-column relative overflow-y-auto">
+  <app-menu-top-bar [isHomeMenu]="'/' | isRouteActive"></app-menu-top-bar>
   <router-outlet />
   <app-footer></app-footer>
 </div>

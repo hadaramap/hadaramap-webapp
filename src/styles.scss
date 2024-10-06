@@ -5,23 +5,33 @@
 
 @import "primeicons/primeicons.css";
 
-@import 'primeflex/primeflex.scss';
+@import "primeflex/primeflex.scss";
 
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lexend:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lexend:wght@100..900&display=swap");
 
+:root {
+  --font-family: Lexend, sans-serif;
+}
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-    height: 100%;
+  height: 100%;
 }
 
-body, app-root {
-    display: block;
-    padding: 0;
-    margin: 0;
-    height: 100%;
-    background: #F4F4F4;
+body,
+app-root {
+  display: block;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  background: #f4f4f4;
+
+  font-family: Lexend;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }

@@ -2,6 +2,7 @@
   .header {
     background: url("../../../../../public/images/header-bg.png");
     background-size: cover;
+    padding-top: 150px;
     .block-left {
       .title {
         color: var(--white, #fff);
@@ -32,13 +33,13 @@
             border-radius: 8px;
             background: var(--YELLOW-2, #f6ce46);
             .p-button-label {
-                color: #212121;
-                text-align: center;
-                font-family: Lexend;
-                font-size: 14px;
-                font-style: normal;
-                font-weight: 500;
-                line-height: normal;
+              color: #212121;
+              text-align: center;
+              font-family: Lexend;
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 500;
+              line-height: normal;
             }
           }
         }
@@ -73,6 +74,167 @@
           }
 
           background-color: white;
+        }
+      }
+    }
+  }
+  .pray-time-section {
+    width: 87.5%;
+    min-height: 130px;
+    border-radius: 5px;
+    background: linear-gradient(
+        0deg,
+        rgba(208, 196, 128, 0.6) 0%,
+        rgba(208, 196, 128, 0.6) 100%
+      ),
+      url("../../../../../public/images/home_prayer_section.png") lightgray 50% /
+        cover no-repeat;
+    // background: url("../../../../../public/images/home_prayer_section.png");
+    background-size: cover;
+    .praytime-details {
+      color: #000;
+      .top {
+        font-family: Lexend;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+      }
+      .bottom {
+        font-family: Lexend;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+      }
+    }
+  }
+  .events-section {
+    .title-section {
+      width: 87.5%;
+      .title {
+        color: #225b51;
+        font-family: Lexend;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+      }
+      .bottom-decoration {
+        width: 100px;
+        height: 6px;
+        background: #225b51;
+        margin-bottom: 5px;
+      }
+    }
+    .list-events {
+      width: 95%;
+      ::ng-deep p-carousel {
+        .p-carousel-prev, .p-carousel-next {
+          background-color: #225B51;
+          color: white;
+          border-radius: inherit;
+        }
+        .p-carousel-content {
+          .p-carousel-indicators{
+            li {
+              &.p-highlight {
+                button {
+                  background-color: #225B51;
+                }
+              }
+            }
+          }
+        }
+      }
+      .event {
+        min-height: 300px;
+        border-radius: 4px;
+        .event-detail {
+          border-top-right-radius: 4px;
+          border-bottom-right-radius: 4px;
+          background-color: white;
+          ::ng-deep p-tag {
+            .p-tag {
+              background: rgba(34, 91, 81, 0.2);
+              color: var(--GREEN, #225b51);
+              font-family: Lexend;
+              font-size: 16px;
+              font-style: normal;
+              font-weight: 500;
+              line-height: normal;
+            }
+          }
+          .category {
+            border-radius: 30px;
+            background: rgba(34, 91, 81, 0.2);
+            color: #225b51;
+            font-family: Lexend;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+          }
+          .title {
+            color: #020100;
+            font-family: Lexend;
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+          }
+          .description {
+            color: rgba(2, 1, 0, 0.7);
+            font-family: Lexend;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 24px;
+          }
+          .location {
+            font-family: Lexend;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 24px;
+            i {
+              color: #f6ce46;
+            }
+          }
+        }
+        .img {
+          .event-date {
+            top: 5%;
+            left: 10%;
+            background-color: #f6ce46;
+            padding: 12px;
+            color: white;
+            z-index: 1;
+            border-radius: 4px;
+            .day {
+              font-size: 40px;
+              font-style: normal;
+              font-weight: 600;
+              line-height: 34px;
+            }
+            .month {
+              font-size: 20px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;
+            }
+          }
+          .backdrop {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #00000033;
+          }
+          img {
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+          }
         }
       }
     }
