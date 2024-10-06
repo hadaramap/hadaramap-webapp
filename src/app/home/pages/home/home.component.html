@@ -1,1 +1,48 @@
-<p>home works!</p>
+<div class="homepage">
+  <div class="header pb-3">
+    <app-menu-top-bar></app-menu-top-bar>
+    <div class="w-11 mx-auto flex justify-content-between mt-6">
+      <div class="block-left w-8 flex flex-column mt-3 gap-3">
+        <span class="title">
+          Bienvenue à la communauté Tijjaniyya sur 
+          <span class="keyword">
+              HADARA MAP
+          </span>
+        </span>
+        <div class="input-search mb-6 flex align-items-center justify-content-center">
+          <p-inputGroup>
+            <input type="text" pInputText placeholder="Trouvez votre espace de zikr" />
+            <button type="button" pButton label="Rechercher"></button>
+          </p-inputGroup>
+        </div>
+        <span class="description">
+          Un espace spirituel unissant des croyants des quatre coins du monde
+        </span>
+      </div>
+      <div class="block-right">
+        <div class="flex align-items-end gap-3">
+          <img ngSrc="images/mobile.png" width="187" height="392" alt="" />
+          <img ngSrc="images/map.png" width="106" height="223" alt="" />
+        </div>
+        <div class="w-7 flex gap-3 mx-auto mt-2">
+          <p-button [outlined]="true">
+            <img src="images/Icon.svg" alt="" />
+            <span class="label"> Télécharger sur <br>
+                <span class="store">
+                    App Store 
+                </span>
+            </span>
+          </p-button>
+          <p-button [outlined]="true">
+            <img src="images/playstore.svg" alt="" />
+            <span class="label"> Télécharger sur <br>
+                <span class="store">
+                    Play Store 
+                </span>
+            </span>
+          </p-button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

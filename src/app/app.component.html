@@ -1,1 +1,7 @@
-<router-outlet />
+<div class="main h-full hidden md:flex flex-column relative">
+  <router-outlet />
+  <app-footer></app-footer>
+</div>
+<div class="main h-full flex flex-column md:hidden sm:block">
+  <app-placeholder-mobile></app-placeholder-mobile>
+</div>
