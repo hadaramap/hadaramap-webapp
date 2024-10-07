@@ -1,0 +1,17 @@
+/*
+  Cache-Control: no-cache
+
+/assets/* 
+  Cache-Control: public, max-age=2592000, immutable
+
+/*.js
+  Cache-Control: public, max-age=2592000, immutable
+
+/*.css
+  Cache-Control: public, max-age=2592000, immutable
+
+/favicon.ico
+  Cache-Control: public, max-age=86400
+
+/images/*
+  Cache-Control: public, max-age=2592000, immutable
