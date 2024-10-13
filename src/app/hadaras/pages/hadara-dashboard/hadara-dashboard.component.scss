@@ -1,3 +1,52 @@
 :host {
-    height: 100%;
+  height: 100%;
+  padding-top: 90px;
+}
+
+.content {
+  .container {
+    .map-section {
+        .input-section {
+            background-color: white;
+        }
+    }
+    .register-place {
+      border-radius: 5px;
+      background: var(--YELLOW-2, #f6ce46);
+      .text-1 {
+        color: #0c0c0c;
+        text-align: center;
+        font-family: Lexend;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 24px; /* 120% */
+      }
+      .text-2 {
+        color: rgba(0, 0, 0, 0.6);
+        text-align: center;
+        font-family: Lexend;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 24px; /* 150% */
+        letter-spacing: 0.8px;
+      }
+    }
+  }
+}
+
+::ng-deep p-button {
+    &.custom-btn {
+        button{
+            background: var(--GREEN, #225B51);
+        }
+    }
+    &.location {
+        button{
+            background: var(--YELLOW-2, #F6CE46);
+            color: #212121;
+            border: none;
+        }
+    }
 }
