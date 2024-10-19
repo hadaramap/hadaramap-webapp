@@ -1,5 +1,6 @@
 import { Component, input } from '@angular/core';
 import { BannerDetails } from '../../models/banner-details.model';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,5 +10,14 @@ import { BannerDetails } from '../../models/banner-details.model';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  data = input.required<BannerDetails>();
+  data?: BannerDetails;
+  constructor(private route: ActivatedRoute) { 
+    this.route.data.subscribe(
+      (data: any) => {
+        console.log(data);
+        
+        this.data = data;
+      }
+    );
+  }
 }

@@ -1,1 +1,106 @@
-<p>praying-time works!</p>
+<app-header></app-header>
+<div class="content mb-8">
+  <div class="filter-section py-3">
+    <form [formGroup]="filterForm" (ngSubmit)="onSubmit()">
+      <div
+        class="filter-btn flex row-gap-2 align-items-center justify-content-between mx-auto w-10"
+      >
+        <div class="flex row-gap-3 align-items-center flex-wrap w-10">
+          <p-dropdown
+            [options]="listsPays"
+            placeholder="Select a country"
+            formControlName="country"
+            styleClass="mr-3 custom-dropdown"
+          />
+          <p-dropdown
+            [options]="listCities"
+            placeholder="Select a city"
+            formControlName="city"
+            styleClass="mr-3 custom-dropdown"
+          />
+          <div class="flex flex-column">
+            <p-button type="submit" label="Rechercher" class="location" />
+            @if ( (filterForm.dirty || filterForm.touched) &&
+            (filterForm.controls['country'].errors ||
+            filterForm.controls['city'].errors)) {
+            <span class="text-orange-900">
+              Veuillez remplir tous les champs pour filtrer.
+            </span>
+            }
+          </div>
+        </div>
+        <p-button
+          label="Effacer les filtres"
+          class="reset-filter"
+          [text]="true"
+        />
+      </div>
+    </form>
+  </div>
+  <div class="main w-10 mx-auto">
+    <span class="block title"> Horaires des prières de Dakar, Sénégal </span>
+    <div class="praying-hours flex justify-content-between">
+      <div class="list w-8">
+        <div class="head flex justify-content-between align-items-center">
+          <span> Horaires des prières pour l'année 2024 </span>
+          <p-dropdown
+            [options]="listMonths"
+            placeholder="Selectionner un mois"
+            [(ngModel)]="selectedMonth"
+            [ngModelOptions]="{ standalone: true }"
+            styleClass="mr-3 custom-dropdown-2"
+          />
+        </div>
+        <p-table tableStyleClass="custom-table" [columns]="cols" [value]="listPrayingTimeByMonth" [tableStyle]="{ 'min-width': '50rem' }">
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th *ngFor="let col of cols">
+                        {{ col.header }}
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-columns="columns">
+                <tr>
+                    <td *ngFor="let col of columns">
+                        @if (col.field === 'date') {
+                            {{ rowData[col.field] | date: 'EEE dd MMM' }}
+                        } @else {
+                            {{  rowData[col.field] }}
+                        }
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+      </div>
+      <div class="today-infos w-3">
+        <span class="block title"> Mardi 3 Septembre 2024 </span>
+        <div class="hours-list flex flex-column gap-3">
+          <div class="item flex justify-content-between">
+            <span class="name block"> Sobh (Fajr) </span>
+            <span class="hour block"> 05:46 </span>
+          </div>
+          <div class="item flex justify-content-between">
+            <span class="name block"> Chorouq </span>
+            <span class="hour block"> 05:46 </span>
+          </div>
+          <div class="item flex justify-content-between">
+            <span class="name block"> Dohr </span>
+            <span class="hour block"> 05:46 </span>
+          </div>
+          <div class="item flex justify-content-between">
+            <span class="name block"> Asr </span>
+            <span class="hour block"> 05:46 </span>
+          </div>
+          <div class="item flex justify-content-between">
+            <span class="name block"> Maghrib </span>
+            <span class="hour block"> 05:46 </span>
+          </div>
+          <div class="item flex justify-content-between">
+            <span class="name block"> Icha </span>
+            <span class="hour block"> 05:46 </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

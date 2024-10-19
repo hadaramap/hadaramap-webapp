@@ -1,3 +1,126 @@
 :host {
-    height: 100%;
+  padding-top: 90px;
+}
+
+.content {
+  .filter-section {
+    background-color: white;
+  }
+  .main {
+    margin-top: 50px;
+    .title {
+      margin-bottom: 30px;
+      color: #000;
+      font-family: Lexend;
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+    .praying-hours {
+      .list {
+        background-color: white;
+        .head {
+          padding: 20px;
+        }
+      }
+      .today-infos {
+        background: linear-gradient(
+            0deg,
+            rgba(208, 196, 128, 0.6) 0%,
+            rgba(208, 196, 128, 0.6) 100%
+          ),
+          url("./../../../../../public/images/pray.png") lightgray 50% / cover
+            no-repeat;
+        background-size: cover;
+        padding: 20px;
+        .title {
+          padding: 12px 16px;
+          background-color: white;
+          color: #000;
+          text-align: center;
+          font-family: Lexend;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+        }
+        .item {
+          background: rgba(255, 255, 255, 0.6);
+          padding: 12px 16px;
+          .name {
+            color: #000;
+            text-align: center;
+            font-family: Lexend;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+          }
+          .hour {
+            color: #5c5b5b;
+            text-align: center;
+            font-family: Lexend;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+          }
+        }
+      }
+    }
+  }
+}
+
+::ng-deep p-button {
+  &.location {
+    button {
+      background: var(--YELLOW-2, #f6ce46);
+      color: #212121;
+      border: none;
+    }
+  }
+  &.reset-filter {
+    button {
+      color: var(--YELLOW-2, #f6ce46);
+      text-align: center;
+      font-family: Lexend;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
+  }
+}
+
+::ng-deep p-dropdown {
+  width: 30%;
+  .custom-dropdown {
+    width: 90%;
+    border: none;
+    background: #f4f6f9;
+  }
+  .custom-dropdown-2 {
+    width: 100%;
+    border-radius: 5px;
+    border: 0.804px solid #d1d5db;
+    background: #f9fafb;
+  }
+}
+
+::ng-deep p-table {
+  table {
+    &.custom-table {
+      th {
+        background: #f2f5f9;
+        color: #8a92a6;
+        font-family: Lexend;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: uppercase;
+      }
+    }
+  }
 }
