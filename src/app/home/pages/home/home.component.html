@@ -1,0 +1,116 @@
+<div class="homepage">
+  <div class="header pb-3 mb-6">
+    <div class="w-11 mx-auto flex justify-content-between ">
+      <div class="block-left w-8 flex flex-column mt-3 gap-3">
+        <span class="title">
+          Bienvenue à la communauté Tijjaniyya sur
+          <span class="keyword"> HADARA MAP </span>
+        </span>
+        <div
+          class="input-search mb-6 flex align-items-center justify-content-center"
+        >
+          <p-inputGroup>
+            <input
+              type="text"
+              pInputText
+              placeholder="Trouvez votre espace de zikr"
+            />
+            <button type="button" pButton label="Rechercher"></button>
+          </p-inputGroup>
+        </div>
+        <span class="description">
+          Un espace spirituel unissant des croyants des quatre coins du monde
+        </span>
+      </div>
+      <div class="block-right">
+        <div class="flex align-items-end gap-3">
+          <img ngSrc="images/mobile.png" width="187" height="392" alt="" />
+          <img ngSrc="images/map.png" width="106" height="223" alt="" />
+        </div>
+        <div class="w-7 flex gap-3 mx-auto mt-2">
+          <p-button [outlined]="true">
+            <img src="images/Icon.svg" alt="" />
+            <span class="label">
+              Télécharger sur <br />
+              <span class="store"> App Store </span>
+            </span>
+          </p-button>
+          <p-button [outlined]="true">
+            <img src="images/playstore.svg" alt="" />
+            <span class="label">
+              Télécharger sur <br />
+              <span class="store"> Play Store </span>
+            </span>
+          </p-button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="pray-time-section mx-auto flex align-items-center justify-content-between px-6 mb-6"
+  >
+    <div class="praytime-details flex align-items-start gap-3">
+      <img ngSrc="images/f7_alarm-fill.svg" width="56" height="56" alt="" />
+      <div class="details flex flex-column">
+        <span class="top"> Fadj 05:46 AM </span>
+        <span class="bottom"> 30 Safar, 1446 Dakar </span>
+      </div>
+    </div>
+    <p-button
+      icon="pi pi-arrow-right"
+      label="Tous les horaires de prière"
+      iconPos="right"
+      severity="success"
+    />
+  </div>
+  <div class="events-section mx-auto">
+    <div class="title-section mx-auto">
+      <span class="title block mb-3"> Évènements à venir </span>
+      <div class="bottom-decoration"></div>
+    </div>
+      
+    <div class="list-events mx-auto mt-5">
+      <p-carousel
+        [value]="listEvents"
+        [numVisible]="2"
+        [numScroll]="1"
+        [circular]="false"
+      >
+        <ng-template let-event pTemplate="item">
+          <div class="flex align-items-stretch h-full event mr-4">
+            <div class="img relative">
+              <div class="absolute event-date">
+                <span class="day block text-center"> {{ event.date | date: 'd'}} </span>
+                <span class="month block text-center">{{ event.date | date: 'MMM'}}</span>
+              </div>
+              <div class="backdrop absolute"></div>
+              <img [ngSrc]="event.image" class="h-full" width="255" height="300" alt="" />
+            </div>
+            <div class="event-detail py-4 px-3">
+              <p-tag [value]="event.category" styleClass="mb-3" [rounded]="true" />
+
+              <span class="block title mb-3">
+                {{ event.title }}
+              </span>
+              <div class="description mb-3">
+                {{ event.description }}
+              </div>
+              <div class="location flex align-items-center gap-1">
+                <i class="pi pi-map-marker"></i>
+                <span class="value">
+                  {{ event.location }}
+                </span>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+        <ng-template pTemplate="previousicon">
+          <i class="pi pi-arrow-left"></i>
+        </ng-template>
+        <ng-template pTemplate="nexticon">
+          <i class="pi pi-arrow-right"></i>
+        </ng-template>
+      </p-carousel>
+    </div>
+  </div>
+</div>

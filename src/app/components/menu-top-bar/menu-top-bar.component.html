@@ -1,0 +1,72 @@
+<div class="container px-8 py-2 flex align-items-center justify-content-between w-full" [ngClass]="{ 'homeMenuStyle' : isHomeMenu() }">
+  <span routerLink="/" class="title mr-6 cursor-pointer"> 
+    @if (isHomeMenu()) {
+      <img ngSrc="images/hadara_map_title.svg" width="235" height="40" alt="">  
+    } @else {
+      <img ngSrc="images/hadara_map_title_white.svg" width="235" height="40" alt="">  
+    }
+  </span>
+  <div class="flex-1 flex justify-content-between align-items-center">
+      <div class="menu-list">
+        <p-button
+          link="true"
+          label="Accueil"
+          [rounded]="true"
+          routerLink="/"
+          routerLinkActive="selected"
+          [routerLinkActiveOptions]="{ exact: true }"
+          severity="success"
+          [text]="true"
+        />
+        <p-button
+          link="true"
+          label="Explorer les Hadaras"
+          [rounded]="true"
+          severity="success"
+          [text]="true"
+          routerLink="/hadaras/map"
+          routerLinkActive="selected"
+          [routerLinkActiveOptions]="{ exact: true }"
+          routerLinkActive="selected"
+        />
+        <p-button
+          link="true"
+          label="Horaires de Prière"
+          [rounded]="true"
+          severity="success"
+          [text]="true"
+          routerLink="/praying-time"
+          routerLinkActive="selected"
+          [routerLinkActiveOptions]="{ exact: true }"
+        />
+        <p-button
+          link="true"
+          label="Événements"
+          [rounded]="true"
+          severity="success"
+          routerLink="/events/list"
+          routerLinkActive="selected"
+          [routerLinkActiveOptions]="{ exact: true }"
+          [text]="true"
+        />
+        <p-button
+          link="true"
+          label="Dons"
+          [rounded]="true"
+          severity="success"
+          routerLink="/donate"
+          routerLinkActive="selected"
+          [routerLinkActiveOptions]="{ exact: true }"
+          [text]="true"
+        />
+      </div>
+      <div class="switch-lang flex gap-2 align-items-center">
+        <img ngSrc="images/fr_flag.png" width="30" height="20" alt="flag_lang">
+        <span class="label">
+          FR
+        </span>
+        <p-button icon="pi pi-angle-down" [rounded]="true" [text]="true" />
+      </div>
+
+  </div>
+</div>

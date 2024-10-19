@@ -1,0 +1,30 @@
+<app-header></app-header>
+<div class="content mb-8">
+    <div class="container w-10 mx-auto mt-6 flex gap-3 md:flex-column lg:flex-row">
+        <div class="map-section flex-1">
+            <div class="flex gap-3 input-section px-3 py-3 justify-content-between">
+                <p-floatLabel class="w-7">
+                    <input class="w-full" variant="filled" pInputText id="place" />
+                    <label for="username">Rechercher le lieu</label>
+                </p-floatLabel>
+                <p-button class="location">
+                    <img width="24" height="24" ngSrc="images/ri_map-pin-user-fill.svg" class="mr-2" alt="">
+                <span>
+                    Obtenir ma position
+                </span>
+                </p-button>
+            </div>
+        </div>
+        <div class="w-4 register-place flex flex-column align-items-center pt-5 px-5 pb-3">
+            <img class="mb-4" ngSrc="images/register-place.svg" height="130" width="130" alt="">
+            <span class="text-1 mb-4">Enregistrer un Zikr</span>
+            <span class="text-2 mb-4">Aidez les frères du chemin à rejoindre la communauté</span>
+            <p-button severity="success" class="custom-btn" styleClass="mb-4" (onClick)="goToRegisterNewPlaceForm()">
+                <img width="24" height="24" ngSrc="images/lucide_map-pin-plus.svg" class="mr-2" alt="">
+                <span>
+                    Enregistrer un lieu
+                </span>
+            </p-button>
+        </div>
+    </div>
+</div>
