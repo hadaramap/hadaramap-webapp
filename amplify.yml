@@ -3,17 +3,16 @@ frontend:
   phases:
     preBuild:
       commands:
-        - npm install -g @angular/cli  # Ensure Angular CLI is available
-        - npm ci  # Install dependencies based on package-lock.json
+        - nvm install 18.19.1 # or any other compatible version such as 20.11.1
+        - nvm use 18.19.1
+        - npm install
     build:
       commands:
-        - ng build --configuration production  # Adjust configuration if needed
+        - npm run build
   artifacts:
-    # Adjust baseDirectory to match your Angular output path if different
-    baseDirectory: dist/hadaramap-webapp
+    baseDirectory: /dist
     files:
       - '**/*'
   cache:
     paths:
       - node_modules/**/*
-      - .angular/cache/**/*
