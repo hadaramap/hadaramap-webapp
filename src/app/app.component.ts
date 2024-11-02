@@ -5,6 +5,7 @@ import { PlaceholderMobileComponent } from './components/placeholder-mobile/plac
 import { MenuTopBarComponent } from './components/menu-top-bar/menu-top-bar.component';
 import { IsRouteActivePipe } from './core/pipes/is-route-active/is-route-active.pipe';
 
+
 @Component({
   selector: 'app-root',
   standalone: true,

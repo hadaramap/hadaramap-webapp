@@ -7,6 +7,7 @@ import { OverlayPanelModule } from 'primeng/overlaypanel';
   selector: 'app-menu-top-bar',
   standalone: true,
   imports: [RouterLink, ButtonModule, NgOptimizedImage, CommonModule, RouterLinkActive, OverlayPanelModule],
+
   templateUrl: './menu-top-bar.component.html',
   styleUrl: './menu-top-bar.component.scss',
 })

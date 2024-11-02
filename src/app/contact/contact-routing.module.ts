@@ -8,6 +8,7 @@ const routes: Routes = [
       title: 'Contact',
       description: 'Soyez partenaire et soutenez la communauté',
     },
+
     loadComponent: () => import('./pages/contact-us/contact-us.component').then(m => m.ContactUsComponent)
   },
   {

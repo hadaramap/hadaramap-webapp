@@ -8,7 +8,6 @@ import { CarouselModule } from 'primeng/carousel';
 import { TagModule } from 'primeng/tag';
 import { Event } from '@app/core/models/event.model';
 
-
 @Component({
   selector: 'app-home',
   standalone: true,
