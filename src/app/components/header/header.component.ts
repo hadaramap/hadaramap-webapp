@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { BannerDetails } from '../../models/banner-details.model';
+import { BannerDetails } from '../../core/models/banner-details.model';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -14,8 +14,6 @@ export class HeaderComponent {
   constructor(private route: ActivatedRoute) { 
     this.route.data.subscribe(
       (data: any) => {
-        console.log(data);
-        
         this.data = data;
       }
     );

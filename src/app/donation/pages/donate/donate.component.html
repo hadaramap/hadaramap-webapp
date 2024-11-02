@@ -1,1 +1,50 @@
-<p>donate works!</p>
+<app-header></app-header>
+<div class="content w-6 mx-auto">
+  <span class="title block text-center mt-4"> Faire un don </span>
+  <div class="payment-form py-6 px-8">
+    <form>
+      <span class="block text-center subtitle mb-6">
+        Choisissez votre mode de paiement
+      </span>
+      <div class="list-mode flex flex-wrap">
+        @for (mode of listPaymentsMode; track $index) {
+        <p-button [outlined]="true" class="col-3 custom-btn">
+          <img [ngSrc]="mode.img" width="80" height="40" alt="" />
+        </p-button>
+        }
+      </div>
+      <div class="grid mt-3">
+        <input
+          type="text"
+          class="col-12 h-4rem mb-3"
+          pInputText
+          variant="filled"
+          placeholder="Nom du titulaire de la carte"
+        />
+        <p-inputGroup class="h-4rem mb-3">
+          <input pInputText placeholder="Numéro de carte" variant="filled" />
+          <p-inputGroupAddon>
+            <i class="pi pi-credit-card"></i>
+          </p-inputGroupAddon>
+        </p-inputGroup>
+        <div class="col-12 flex align-items-center justify-content-between">
+            <p-inputGroup class="col-6 pl-0 mb-3">
+              <p-inputMask styleClass="w-full" variant="filled" mask="99/99" placeholder="mm/yy" slotChar="mm/yy" />
+              <p-inputGroupAddon>
+                <i class="pi pi-calendar"></i>
+              </p-inputGroupAddon>
+            </p-inputGroup>
+            <p-inputGroup class="col-6 pr-0 mb-3">
+              <p-inputMask mask="999" styleClass="w-full" variant="filled" placeholder="CVV" slotChar="cvv" />
+              <p-inputGroupAddon>
+                <i class="pi pi-credit-card"></i>
+              </p-inputGroupAddon>
+            </p-inputGroup>
+        </div>
+        <div class="col-6 mx-auto">
+            <p-button type="submit" styleClass="w-full" class="custom-submit" label="Soumettre" />
+          </div>
+      </div>
+    </form>
+  </div>
+</div>

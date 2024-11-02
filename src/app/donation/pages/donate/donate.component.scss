@@ -1,3 +1,54 @@
 :host {
-    height: 100%;
+  padding-top: 90px;
+  //   min-height: 100%;
+}
+.content {
+  margin-bottom: 50px;
+  .title {
+    color: #000;
+    text-align: center;
+    font-family: Lexend;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 20px;
+  }
+  .payment-form {
+    background-color: white;
+    .subtitle {
+      color: #000;
+      text-align: center;
+      font-family: Lexend;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
+    .list-mode {
+      .item {
+      }
+    }
+  }
+}
+
+::ng-deep p-button {
+  &.custom-btn {
+    button {
+      width: 100%;
+    }
+  }
+  &.custom-submit {
+    button {
+      background: var(--YELLOW-2, #f6ce46);
+      border: none;
+      color: #212121;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+    }
+    .p-button-label {
+        font-weight: 500;
+    }
+  }
 }
