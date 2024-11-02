@@ -1,1 +1,33 @@
-<p>events-list works!</p>
+<app-header></app-header>
+<div class="content mx-auto py-6">
+    <div class="list-events flex flex-wrap">
+        @for (event of listEvents; track $index) {
+            <div class="event flex align-items-stretch event col-6">
+                <div class="img relative">
+                  <div class="absolute event-date">
+                    <span class="day block text-center"> {{ event.date | date: 'd'}} </span>
+                    <span class="month block text-center">{{ event.date | date: 'MMM'}}</span>
+                  </div>
+                  <div class="backdrop absolute"></div>
+                  <img [ngSrc]="event.image" class="h-full" width="255" height="300" alt="" />
+                </div>
+                <div class="event-detail py-4 px-3">
+                  <p-tag [value]="event.category" styleClass="mb-3" [rounded]="true" />
+        
+                  <span class="block title mb-3">
+                    {{ event.title }}
+                  </span>
+                  <div class="description mb-3">
+                    {{ event.description }}
+                  </div>
+                  <div class="location flex align-items-center gap-1">
+                    <i class="pi pi-map-marker"></i>
+                    <span class="value">
+                      {{ event.location }}
+                    </span>
+                  </div>
+                </div>
+              </div>
+        }
+    </div>
+</div>

@@ -4,6 +4,10 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'list',
+    data: {
+      title: 'Événements Tidiani',
+      description: 'Découvrir nos évènemnts',
+    },
     loadComponent: () =>
       import('./pages/events-list/events-list.component').then(
         (m) => m.EventsListComponent
