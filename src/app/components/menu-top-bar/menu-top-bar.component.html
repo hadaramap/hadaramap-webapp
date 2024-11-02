@@ -59,13 +59,31 @@
           [routerLinkActiveOptions]="{ exact: true }"
           [text]="true"
         />
+        <p-button
+          link="true"
+          label="Contact"
+          [rounded]="true"
+          severity="success"
+          routerLink="/contact-us"
+          routerLinkActive="selected"
+          [routerLinkActiveOptions]="{ exact: true }"
+          [text]="true"
+        />
+
       </div>
       <div class="switch-lang flex gap-2 align-items-center">
         <img ngSrc="images/fr_flag.png" width="30" height="20" alt="flag_lang">
         <span class="label">
           FR
         </span>
-        <p-button icon="pi pi-angle-down" [rounded]="true" [text]="true" />
+        <p-button (onClick)="op.toggle($event)" icon="pi pi-angle-down" [rounded]="true" [text]="true" />
+        <p-overlayPanel #op>
+          <div class="flex flex-column gap-3">
+            <p-button (onClick)="op.hide()" label="Français" [text]="true" />
+            <p-button (onClick)="op.hide()" label="Anglais" [text]="true" />
+          </div>
+      </p-overlayPanel>
+
       </div>
 
   </div>

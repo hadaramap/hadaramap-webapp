@@ -1,8 +1,71 @@
 :host {
-    // height: 100%;
-    padding-top: 90px;
-  }
+  // height: 100%;
+  padding-top: 90px;
+}
 
 .content {
+  .form {
+    background-color: #ffffff;
+    padding: 50px 50px 20px;
+    .title-style {
+      color: #000;
+      font-family: Lexend;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
+    .field-radiobtn {
+      border-radius: var(--Blur-100, 4px);
+      border: 1px solid rgba(6, 7, 9, 0.2);
+      padding: 12px;
+    }
+    .selected {
+      border-radius: var(--Blur-100, 4px);
+      border: 2px solid var(--YELLOW-2, #f6ce46);
+      background: rgba(246, 206, 70, 0.1);
+      ::ng-deep p-radiobutton {
+        .p-radiobutton {
+          .p-highlight {
+            border-color: #f6ce46;
+            background-color: #f6ce46;
+          }
+        }
+      }
+    }
+    .clock-icon {
+      left: 10px;
+      top: 15px;
+    }
+    .geoLocalisation {
+      border-radius: var(--Blur-100, 4px);
+      background: #f4f6f9;
+    }
+  }
+}
 
+::ng-deep p-checkbox {
+  .p-checkbox {
+    .p-highlight {
+      border-color: #f6ce46;
+      background-color: #f6ce46;
+    }
+  }
+}
+
+::ng-deep p-button {
+  &.custom {
+    button {
+      background: var(--YELLOW-2, #f6ce46);
+      color: #212121;
+      border: none;
+    }
+  }
+  &.customGeoLoc {
+    button {
+      background-color: #f3f4f6;
+      color: #212121;
+      border: none;
+    }
+  }
 }

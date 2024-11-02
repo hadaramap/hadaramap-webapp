@@ -3,7 +3,8 @@ import { RouterModule, RouterOutlet } from '@angular/router';
 import { FooterComponent } from './components/footer/footer.component';
 import { PlaceholderMobileComponent } from './components/placeholder-mobile/placeholder-mobile.component';
 import { MenuTopBarComponent } from './components/menu-top-bar/menu-top-bar.component';
-import { IsRouteActivePipe } from './pipes/is-route-active/is-route-active.pipe';
+import { IsRouteActivePipe } from './core/pipes/is-route-active/is-route-active.pipe';
+
 
 @Component({
   selector: 'app-root',

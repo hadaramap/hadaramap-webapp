@@ -1,7 +1,173 @@
 <app-header></app-header>
 <div class="content mb-8 flex align-items-stretch w-10 mx-auto pt-6">
-    <div class="form w-10">
-
+  <div class="form w-10">
+    <div class="title title-style text-center">
+      Merci de remplir le formulaire
     </div>
-    <img class="flex-1" src="images/Frame_1272628240.png" alt="">
+    @if(hasError) {
+    <div>
+      <p-message
+        severity="error"
+        text="Une erreur est survenue, lors de la récupération de la géolocalsation"
+      ></p-message>
+    </div>
+    }
+    <form [formGroup]="formGroup" (ngSubmit)="submitInfos()" class="grid">
+      <div class="flex col-12 mt-6">
+        <input
+          type="text"
+          class="col-5 mr-3"
+          pInputText
+          variant="filled"
+          formControlName="locationName"
+          placeholder="Nom du lieu"
+        />
+        <!-- <div class="col-6">
+        <p-button icon="pi pi-map-marker" class="customGeoLoc" (click)="getGeolocation()" />
+        <div class="geoLocalisation">
+
+        </div>
+        </div> -->
+        <p-inputGroup styleClass="">
+          <p-inputGroupAddon styleClass="col-12">
+            @if (isLoadingLocalization) {
+            <i class="pi pi-spin pi-spinner"></i>
+            }@else {
+            <i class="pi pi-map-marker"></i>
+            }
+          </p-inputGroupAddon>
+          @if (!formGroup.get('geolocation')?.value) {
+          <input
+            formControlName="geolocation"
+            readonly
+            pInputText
+            variant="filled"
+            placeholder="Adresse"
+            (click)="getGeolocation()"
+          />
+          } @else {
+          <input
+            [value]="
+              formGroup.get('geolocation')?.value.latitude +
+              ',' +
+              formGroup.get('geolocation')?.value.longitude
+            "
+            readonly
+            pInputText
+            variant="filled"
+            placeholder="Adresse"
+            (click)="getGeolocation()"
+          />
+          }
+        </p-inputGroup>
+      </div>
+      <div class="col-12 mt-4">
+        <span class="block my-3 title-style"> Type de lieu</span>
+        <div class="flex flex-wrap gap-3">
+          @for (item of hadaraPlaceTypeList; track $index) {
+          <div
+            class="field-radiobtn"
+            [ngClass]="{
+              selected: formGroup.get('placeType')?.value === item.value
+            }"
+          >
+            <p-radioButton
+              [inputId]="$index.toString()"
+              [value]="item.value"
+              formControlName="placeType"
+            />
+            <label [for]="$index.toString()" class="ml-2">
+              {{ item.label }}
+            </label>
+          </div>
+          }
+        </div>
+      </div>
+      <div class="col-12 mt-4">
+        <span class="block my-3 title-style"> Journées portes ouvertes</span>
+        <div class="flex flex-wrap gap-3">
+          @for (item of openingDays; track $index) {
+          <div class="field-checkbox selectedDay">
+            <p-checkbox
+              [inputId]="$index.toString()"
+              [value]="item.value"
+              formControlName="openingDays"
+            />
+            <label [for]="$index.toString()" class="ml-2">
+              {{ item.label }}
+            </label>
+          </div>
+          }
+        </div>
+      </div>
+      <div class="col-12 mt-4">
+        <span class="block my-3 title-style"> Horaires</span>
+        <div class="flex gap-3">
+          <div class="relative">
+            <!-- <i class="pi pi-clock absolute left-0 z-1 clock-icon"></i> -->
+            <p-calendar
+              inputId="calendar-timeonly"
+              formControlName="openingHour"
+              [timeOnly]="true"
+              variant="filled"
+              styleClass="h-full"
+              placeholder="Heure d'ouverture"
+            />
+          </div>
+          <div class="relative">
+            <!-- <i class="pi pi-clock absolute left-0 z-1 clock-icon"></i> -->
+            <p-calendar
+              inputId="calendar-timeonly"
+              formControlName="closingHour"
+              [timeOnly]="true"
+              variant="filled"
+              styleClass="h-full"
+              placeholder="Heure de fermeture"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="col mt-4">
+        <span class="block my-3 title-style"> Responsable</span>
+        <div class="grid gap-3">
+          <input
+            type="text"
+            class="col-5 mr-3 h-3rem"
+            pInputText
+            variant="filled"
+            formControlName="responsableFirstname"
+            placeholder="Prénom"
+          />
+          <input
+            type="text"
+            class="col-6 h-3rem"
+            pInputText
+            variant="filled"
+            formControlName="responsableLastname"
+            placeholder="Nom"
+          />
+          <input
+            type="text"
+            class="col-5 h-3rem"
+            pInputText
+            variant="filled"
+            formControlName="responsablePhoneNumber"
+            placeholder="Téléphone"
+          />
+        </div>
+      </div>
+      <div class="col-12 mt-4">
+        <p-button type="submit" class="custom" styleClass="col-5 py-4" label="Enregistrer" />
+      </div>
+      @if(formGroup.invalid && formGroup.dirty) {
+        <div class="col-12">
+          <p-message
+            severity="error"
+            text="Veuillez remplir correctement les champs du formulaires"
+          ></p-message>
+        </div>
+        }
+    </form>
+  </div>
+  <img class="flex-1" src="images/Frame_1272628240.png" alt="" />
 </div>

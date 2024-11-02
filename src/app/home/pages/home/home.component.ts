@@ -6,15 +6,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { NgOptimizedImage } from '@angular/common'
 import { CarouselModule } from 'primeng/carousel';
 import { TagModule } from 'primeng/tag';
+import { Event } from '@app/core/models/event.model';
 
-interface Event {
-  title: string;
-  description: string;
-  date: Date;
-  location: string;
-  category: string;
-  image: string;
-}
 @Component({
   selector: 'app-home',
   standalone: true,
