@@ -6,8 +6,13 @@ frontend:
         - nvm install 18.19.1 # or any other compatible version such as 20.11.1
         - nvm use 18.19.1
         - npm install
+  build:
+      commands:
+        - npx ng build --configuration production
+        - echo "Build output structure:"
+        - ls -R dist/hadaramap-webapp
   artifacts:
-    baseDirectory: dist/hadaramap-webapp
+    baseDirectory: dist/hadaramap-webapp/browser
     files:
       - '**/*'
   cache:
