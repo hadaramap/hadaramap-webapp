@@ -1,0 +1,18 @@
+{
+  "app": {
+    "hello": "hello {{value}}",
+    "title": "Hadara Map Application Web",
+    "menu": {
+      "home": "Accueil",
+      "explore": "Explorer les Hadaras",
+      "prayingTime": "Horaire de prière",
+      "events": "Événements",
+      "donations": "Dons",
+      "contact": "Contact"
+    },
+    "languages": {
+      "en": "Anglais",
+      "fr": "Français"
+    }
+  }
+}
