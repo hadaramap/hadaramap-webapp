@@ -1,90 +1,105 @@
-<div class="container px-8 py-2 flex align-items-center justify-content-between w-full" [ngClass]="{ 'homeMenuStyle' : isHomeMenu() }">
-  <span routerLink="/" class="title mr-6 cursor-pointer"> 
+<div
+  class="container px-8 py-2 flex align-items-center justify-content-between w-full"
+  [ngClass]="{ homeMenuStyle: isHomeMenu() }"
+>
+  <span routerLink="/" class="title mr-6 cursor-pointer">
     @if (isHomeMenu()) {
-      <img ngSrc="images/hadara_map_title.svg" width="235" height="40" alt="">  
+    <img ngSrc="images/hadara_map_title.svg" width="235" height="40" alt="" />
     } @else {
-      <img ngSrc="images/hadara_map_title_white.svg" width="235" height="40" alt="">  
+    <img
+      ngSrc="images/hadara_map_title_white.svg"
+      width="235"
+      height="40"
+      alt=""
+    />
     }
   </span>
   <div class="flex-1 flex justify-content-between align-items-center">
-      <div class="menu-list">
-        <p-button
-          link="true"
-          label="Accueil"
-          [rounded]="true"
-          routerLink="/"
-          routerLinkActive="selected"
-          [routerLinkActiveOptions]="{ exact: true }"
-          severity="success"
-          [text]="true"
-        />
-        <p-button
-          link="true"
-          label="Explorer les Hadaras"
-          [rounded]="true"
-          severity="success"
-          [text]="true"
-          routerLink="/hadaras/map"
-          routerLinkActive="selected"
-          [routerLinkActiveOptions]="{ exact: true }"
-          routerLinkActive="selected"
-        />
-        <p-button
-          link="true"
-          label="Horaires de Prière"
-          [rounded]="true"
-          severity="success"
-          [text]="true"
-          routerLink="/praying-time"
-          routerLinkActive="selected"
-          [routerLinkActiveOptions]="{ exact: true }"
-        />
-        <p-button
-          link="true"
-          label="Événements"
-          [rounded]="true"
-          severity="success"
-          routerLink="/events/list"
-          routerLinkActive="selected"
-          [routerLinkActiveOptions]="{ exact: true }"
-          [text]="true"
-        />
-        <p-button
-          link="true"
-          label="Dons"
-          [rounded]="true"
-          severity="success"
-          routerLink="/donate"
-          routerLinkActive="selected"
-          [routerLinkActiveOptions]="{ exact: true }"
-          [text]="true"
-        />
-        <p-button
-          link="true"
-          label="Contact"
-          [rounded]="true"
-          severity="success"
-          routerLink="/contact-us"
-          routerLinkActive="selected"
-          [routerLinkActiveOptions]="{ exact: true }"
-          [text]="true"
-        />
-
-      </div>
-      <div class="switch-lang flex gap-2 align-items-center">
-        <img ngSrc="images/fr_flag.png" width="30" height="20" alt="flag_lang">
-        <span class="label">
-          FR
-        </span>
-        <p-button (onClick)="op.toggle($event)" icon="pi pi-angle-down" [rounded]="true" [text]="true" />
-        <p-overlayPanel #op>
-          <div class="flex flex-column gap-3">
-            <p-button (onClick)="op.hide()" label="Français" [text]="true" />
-            <p-button (onClick)="op.hide()" label="Anglais" [text]="true" />
-          </div>
+    <div class="menu-list">
+      <p-button
+        link="true"
+        [label]="'app.menu.home' | translate"
+        [rounded]="true"
+        routerLink="/"
+        routerLinkActive="selected"
+        [routerLinkActiveOptions]="{ exact: true }"
+        severity="success"
+        [text]="true"
+      />
+      <p-button
+        link="true"
+        [label]="'app.menu.explore' | translate"
+        [rounded]="true"
+        severity="success"
+        [text]="true"
+        routerLink="/hadaras/map"
+        routerLinkActive="selected"
+        [routerLinkActiveOptions]="{ exact: true }"
+        routerLinkActive="selected"
+      />
+      <p-button
+        link="true"
+        [label]="'app.menu.prayingTime' | translate"
+        [rounded]="true"
+        severity="success"
+        [text]="true"
+        routerLink="/praying-time"
+        routerLinkActive="selected"
+        [routerLinkActiveOptions]="{ exact: true }"
+      />
+      <p-button
+        link="true"
+        [label]="'app.menu.events' | translate"
+        [rounded]="true"
+        severity="success"
+        routerLink="/events/list"
+        routerLinkActive="selected"
+        [routerLinkActiveOptions]="{ exact: true }"
+        [text]="true"
+      />
+      <p-button
+        link="true"
+        [label]="'app.menu.donations' | translate"
+        [rounded]="true"
+        severity="success"
+        routerLink="/donate"
+        routerLinkActive="selected"
+        [routerLinkActiveOptions]="{ exact: true }"
+        [text]="true"
+      />
+      <p-button
+        link="true"
+        [label]="'app.menu.contact' | translate"
+        [rounded]="true"
+        severity="success"
+        routerLink="/contact-us"
+        routerLinkActive="selected"
+        [routerLinkActiveOptions]="{ exact: true }"
+        [text]="true"
+      />
+    </div>
+    <div class="switch-lang flex gap-2 align-items-center">
+      <!-- <img ngSrc="images/fr_flag.png" width="30" height="20" alt="flag_lang" /> -->
+      <span class="label"> FR </span>
+      <p-button
+        (onClick)="op.toggle($event)"
+        icon="pi pi-angle-down"
+        [rounded]="true"
+        [text]="true"
+      />
+      <p-overlayPanel #op>
+        <div class="flex flex-column gap-3">
+          @for (lang of languages; track $index) {
+            @if(lang !== currentLanguage) {
+              <p-button
+                (onClick)="op.hide(); changeLanguage(lang)"
+                [label]="'app.languages.' + lang | translate"
+                [text]="true"
+              />
+            }
+          }
+        </div>
       </p-overlayPanel>
-
-      </div>
-
+    </div>
   </div>
 </div>

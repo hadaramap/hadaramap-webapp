@@ -5,9 +5,6 @@
   "projects": {
     "hadaramap-webapp": {
       "projectType": "application",
-      "i18n": {
-        "sourceLocale": "fr"
-      },
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
@@ -70,9 +67,6 @@
             }
           },
           "defaultConfiguration": "development"
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n"
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
